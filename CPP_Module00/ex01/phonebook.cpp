@@ -9,10 +9,27 @@ PhoneBook::PhoneBook() : index(0), count(0)
 
 void PhoneBook::AddContact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNum, std::string darkestSecret)
 {
+	if (firstName.empty() || lastName.empty() || nickName.empty() || phoneNum.empty() || darkestSecret.empty())
+	{
+		std::cout << "Fields cannot be empty." << std::endl;
+		return;
+	}
 	contacts[index].setContact(firstName, lastName, nickName, phoneNum, darkestSecret);
 	index = (index + 1) % 8;
 	if(count < 8)
 		count++;
+}
+
+bool PhoneBook::IsValidIndex(int id)
+{
+	return id >= 0 && id < count;
+}
+
+std::string PhoneBook::FormatField(std::string str)
+{
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return str;
 }
 
 void PhoneBook::ShowTable()
@@ -29,11 +46,11 @@ void PhoneBook::ShowTable()
 	{
 		std::cout << std::right << std::setw(10) << i;
 		std::cout << "|";
-		std::cout << std::right << std::setw(10) << contacts[i].GetFirstName();
+		std::cout << std::right << std::setw(10) << FormatField(contacts[i].GetFirstName());
 		std::cout << "|";
-		std::cout << std::right << std::setw(10) << contacts[i].GetLastName();
+		std::cout << std::right << std::setw(10) << FormatField(contacts[i].GetLastName());
 		std::cout << "|";
-		std::cout << std::right << std::setw(10) << contacts[i].GetNick();
+		std::cout << std::right << std::setw(10) << FormatField(contacts[i].GetNick());
 		std::cout << "|" << std::endl;
 	}
 }

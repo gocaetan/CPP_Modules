@@ -26,5 +26,9 @@ std::string Contact::GetLastName()
 
 void Contact::Print()
 {
-	std::cout << (firstName + "\n" + lastName + "\n" + nickName + "\n" + phoneNumber + "\n" + darkestSecret = "\n");
+	std::cout << firstName << std::endl;
+	std::cout << lastName << std::endl;
+	std::cout << nickName << std::endl;
+	std::cout << phoneNumber << std::endl;
+	std::cout << darkestSecret << std::endl;
 }

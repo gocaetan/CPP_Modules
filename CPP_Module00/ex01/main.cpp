@@ -33,6 +33,21 @@ int main()
 		if(command == "SEARCH")
 		{
 			phonebook.ShowTable();
+
+			std::string input;
+
+			std::cout << "Enter index: ";
+			std::getline(std::cin, input);
+
+			if (input.length() == 1 && input[0] >= '0' && input[0] <= '7')
+			{
+				int id = input[0] - '0';
+
+				if (phonebook.IsValidIndex(id))
+					phonebook.PrintContact(id);
+				else
+					std::cout << "Invalid index." << std::endl;
+			}
 		}
 		if(command == "EXIT")
 			break;
