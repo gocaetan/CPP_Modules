@@ -1,5 +1,5 @@
 #ifndef BRAIN_HPP
-#define Brain_HPP
+#define BRAIN_HPP
 
 #include <string>
 #include <iostream>
@@ -12,5 +12,7 @@ class Brain
 		Brain(const Brain &copy);
 		Brain &operator=(const Brain &other);
 		~Brain();
+		std::string getIdea(int index) const;
+		void setIdea(int index, std::string idea);
 };
 #endif

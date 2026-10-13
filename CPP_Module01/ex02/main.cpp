@@ -14,4 +14,9 @@ int main()
 	std::cout << "Value pointed by PTR: " << *stringPTR << std::endl;
 	std::cout << "Value referred by REF: " << stringREF << std::endl;
 
+	*stringPTR = "TEST";
+	std::cout << str << std::endl;
+
+	stringREF = "HELLO";
+	std::cout << str << std::endl;
 }

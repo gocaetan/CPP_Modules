@@ -9,23 +9,31 @@ Dog::Dog()
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
-	this->brain = new Brain(copy.brain);
+	this->brain = new Brain(*copy.brain);
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
-	Animal::operator(other);
-	this->brain = new Brain(other.brain);
+	if(this != &other)
+	{
+		Animal::operator=(other);
+		*this->brain = *other.brain;
+	}
 	return(*this);
 }
 
 Dog::~Dog()
 {
-	delete this->brain
+	delete this->brain;	
 	std::cout << "Dog has been destroyed" << std::endl;
 }
 
 void Dog::makeSound()const
 {
 	std::cout << "Woof!!" << std::endl;
+}
+
+Brain *Dog::getBrain()const
+{
+	return this->brain;
 }

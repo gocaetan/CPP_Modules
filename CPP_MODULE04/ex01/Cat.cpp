@@ -28,3 +28,8 @@ void Cat::makeSound()const
 {
 	std::cout << "Miau" << std::endl;
 }
+
+Brain *Cat::getBrain()const
+{
+	return this->brain;
+}
