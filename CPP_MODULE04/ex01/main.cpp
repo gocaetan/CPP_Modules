@@ -10,44 +10,31 @@
 
 int main()
 {
-	std::cout << "===== TEST 1: BRAIN IDEAS =====" << std::endl;
-
+	Animal *animals[10];
+	for(int i = 0; i < 10; i++)
+	{
+		if(i < 5)
+			animals[i] = new Dog;
+		else
+			animals[i] = new Cat;
+		Dog super_maxi;
+		Cat gato_noir;
+		super_maxi.getBrain()->setIdea(i, "Dog idea: ");
+		gato_noir.getBrain()->setIdea(i, "Cat Idea: ");
+		std::cout << super_maxi.getBrain()->getIdea(i) << i + 1 << std::endl;
+		std::cout << gato_noir.getBrain()->getIdea(i) << i  + 1<< std::endl;
+	}
+	std::cout << "\nDEEP COPY" << std::endl;
 	Dog original;
-	original.getBrain()->setIdea(0, "I love C++");
-	original.getBrain()->setIdea(1, "I love 42");
-
-	std::cout << "Idea 0: " << original.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Idea 1: " << original.getBrain()->getIdea(1) << std::endl;
-
-	std::cout << "\n===== TEST 2: DEEP COPY =====" << std::endl;
-
+	original.getBrain()->setIdea(0, "Original idea");
 	Dog copy(original);
-
-	std::cout << "Original: "
-		<< original.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copy: "
-		<< copy.getBrain()->getIdea(0) << std::endl;
-
-	std::cout << "\n===== TEST 3: INDEPENDENCE =====" << std::endl;
-
-	copy.getBrain()->setIdea(0, "I love 42");
-
-	std::cout << "Original after change: "
-		<< original.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copy after change: "
-		<< copy.getBrain()->getIdea(0) << std::endl;
-
-	std::cout << "\n===== TEST 4: ASSIGNMENT =====" << std::endl;
-
-	Dog assigned;
-	assigned = original;
-
-	assigned.getBrain()->setIdea(0, "New idea");
-
-	std::cout << "Original: " << original.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Assigned: " << assigned.getBrain()->getIdea(0) << std::endl;
-
-	std::cout << "\n===== END OF TESTS =====" << std::endl;
-
-	return 0;
+	std::cout << original.getBrain()->getIdea(0) << std::endl;
+	std::cout << copy.getBrain()->getIdea(0) << std::endl;
+	std::cout << "\nAFTER MODIFICATION" << std::endl;
+	copy.getBrain()->setIdea(0, "Copy idea");
+	std::cout << original.getBrain()->getIdea(0) << std::endl;
+	std::cout << copy.getBrain()->getIdea(0) << std::endl;
+	std::cout << "\nDELETE ANIMALS" << std::endl;
+	for(int i = 0; i < 10; i++)
+		delete animals[i];
 }

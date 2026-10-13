@@ -8,7 +8,7 @@ WrongCat::WrongCat()
 
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy)
 {
-    *this = copy;
+	*this = copy;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &other)

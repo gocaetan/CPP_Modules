@@ -23,7 +23,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	if(this != &other)
 		ClapTrap::operator=(other);
-	std::cout << "ScavTrap " << this->name << "  copy assigned!" << std::endl;
+	std::cout << "ScavTrap " << this->name << " copy assigned!" << std::endl;
 	return(*this);
 }
 

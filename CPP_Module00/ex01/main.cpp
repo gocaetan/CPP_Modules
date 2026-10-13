@@ -11,6 +11,11 @@ int main()
 	{
 		std:: cout << "Command ";
 		std:: getline(std::cin, command);
+		if(std::cin.eof())
+		{
+			std::cout << std::endl;
+			break;
+		}
 		std::string First;
 		std::string Last;
 		std::string Nick;

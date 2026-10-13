@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Default")
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->health = 100;
 	this->energy = 50;
@@ -23,7 +23,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	if(this != &other)
 		ClapTrap::operator=(other);
-	std::cout << "ScavTrap " << this->name << "  copy assigned!" << std::endl;
+	std::cout << "ScavTrap " << this->name << " copy assigned!" << std::endl;
 	return(*this);
 }
 
@@ -42,12 +42,12 @@ void ScavTrap::guardGate()
 {
 	if(!ClapTrap::canAct())
 	{
-		std::cout << "ScavTrap" << this->name << "can't guard his gate because he has no energy or health left" << std::endl;
+		std::cout << "ScavTrap " << this->name << " can't guard his gate because he has no energy or health left" << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap" << this->name << "guarded his gate" << std::endl;
+	std::cout << "ScavTrap " << this->name << " guarded his gate" << std::endl;
 }
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap" << this->name << "destroyed" << std::endl;
+	std::cout << "ScavTrap " << this->name << " destroyed" << std::endl;
 }

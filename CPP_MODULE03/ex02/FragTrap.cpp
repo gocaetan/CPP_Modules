@@ -10,8 +10,8 @@ FragTrap::FragTrap() : ClapTrap("Default")
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
 	this->health = 100;
-	this->energy = 50;
-	this->damage = 20;
+	this->energy = 100;
+	this->damage = 30;
  	std::cout << "FragTrap " << this->name << " has been created" << std::endl;
 }
 
@@ -42,12 +42,12 @@ void FragTrap::highFivesGuys()
 {
 	if(!ClapTrap::canAct())
 	{
-		std::cout << "FragTrap" << this->name << "can't high five because he has no energy or health left" << std::endl;
+		std::cout << "FragTrap " << this->name << " can't high five because he has no energy or health left" << std::endl;
 		return;
 	}
-	std::cout << "FragTrap" << this->name << "high fived 5 guys" << std::endl;
+	std::cout << "FragTrap " << this->name << " high fived 5 guys" << std::endl;
 }
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap" << this->name << "destroyed" << std::endl;
+	std::cout << "FragTrap " << this->name << " destroyed" << std::endl;
 }

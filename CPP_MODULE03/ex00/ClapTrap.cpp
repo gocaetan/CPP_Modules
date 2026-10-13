@@ -1,13 +1,15 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap():health(10), energy(10), damage(0)
 {
-	std::cout << "Default constructor" << std::endl;
+	this->name = "Default";
+	std::cout << "ClapTrap " << this->name << " created" << std::endl;
 }
+
 ClapTrap::ClapTrap(std::string name):health(10), energy(10), damage(0)
 {
 	this->name = name;
-	std::cout << "ClapTrap" << this->name << "created" << std::endl;
+	std::cout << "ClapTrap " << this->name << " created" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)

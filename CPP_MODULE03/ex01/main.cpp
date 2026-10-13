@@ -4,7 +4,8 @@ int main()
 {
     std::cout << "===== CONSTRUCTION =====" << std::endl;
 
-    ScavTrap bob("Bob");
+    ScavTrap bob("Shaka");
+	ScavTrap bob_default;
 
     std::cout << "\n===== ATTACK =====" << std::endl;
 
@@ -12,9 +13,19 @@ int main()
 
     std::cout << "\n===== DAMAGE / REPAIR =====" << std::endl;
 
-    bob.takeDamage(30);
     bob.beRepaired(20);
-
+    bob.takeDamage(30);
+	
+	// //No health
+	// bob.takeDamage(90);
+	// bob.beRepaired(2);
+	// bob.attack("E");
+	
+	// //No energy
+	// for(int i = 0; i < 50; i++)
+	// bob.beRepaired(2);
+	// bob.attack("A");
+	
     std::cout << "\n===== SPECIAL ABILITY =====" << std::endl;
 
     bob.guardGate();
